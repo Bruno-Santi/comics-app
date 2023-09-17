@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "SUPER-HERO";
+  src: url("../../public/fonts/Super\ Squad.ttf");
+}
+
+#nav-list {
+  font-family: "SUPER-HERO";
+}
