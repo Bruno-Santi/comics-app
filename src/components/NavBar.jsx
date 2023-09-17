@@ -1,14 +1,16 @@
 import NavBarStyle from "../styles/NavBarStyle.css";
 import { NavLink } from "react-router-dom";
+import "animate.css";
+
 export const NavBar = () => {
   return (
     <nav className='d-flex w-100  justify-content-md-between bg-dark'>
-      <a className='navbar-brand pl-1 justify-self-start ' href='#'>
+      <a className='navbar-brand py-3 justify-self-start' href='#'>
         <img
           src={"../../public/img/marvel-icon.png"}
           alt='Marvel Comics App Logo'
-          className='mx-4 mt-4 align-middle py-1'
-          width='fit'
+          className=' mx-4 my-auto animate__animated animate__fadeInLeft animate__delay-2 '
+          width='130'
           height='100'
         />
       </a>
