@@ -16,15 +16,20 @@ export const usePaginate = () => {
       setCurrentItems(
         comics.slice(itemOffSet, itemOffSet + itemsPerPage)
       );
+
       setPageCount(Math.ceil(comics.length / itemsPerPage));
     } else {
       dispatch(getComics());
     }
   }, [comics, dispatch, itemOffSet, itemsPerPage]);
+  useEffect(() => {
+    setItemOffSet(0);
+  }, [comics]);
 
   const handlePageClick = (event) => {
     const newOffSet = (event.selected * itemsPerPage) % comics.length;
     setItemOffSet(newOffSet);
+    console.log(currentItems);
     window.scrollTo({
       top: 0,
       behavior: "smooth",

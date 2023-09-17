@@ -1,11 +1,12 @@
 import { usePaginate } from "../hooks/usePaginate";
-import { ComicCard, Loading, Pagination } from "./index";
+import { ComicCard, Loading, Pagination, SearchComic } from "./index";
 
 export const Comics = () => {
   const { handlePageClick, currentItems, pageCount } = usePaginate();
 
   return (
     <div>
+      <SearchComic />
       <div className='row rows-cols-1 p-5 row-cols-sm-4 w-75 justify-content-center mx-auto g-4'>
         {!currentItems ? (
           <Loading />
@@ -16,12 +17,11 @@ export const Comics = () => {
           ))
         )}
       </div>
-      {pageCount > 1 && (
-        <Pagination
-          handlePageClick={handlePageClick}
-          pageCount={pageCount}
-        />
-      )}
+
+      <Pagination
+        handlePageClick={handlePageClick}
+        pageCount={pageCount}
+      />
     </div>
   );
 };

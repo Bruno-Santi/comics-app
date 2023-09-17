@@ -1,7 +1,12 @@
-import { GET_COMICS } from "./action";
+import {
+  CLEAN_COMICS,
+  GET_COMICS,
+  GET_COMICS_BY_NAME,
+} from "./action";
 
 const initialState = {
   comics: [],
+  comicsBackup: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,6 +15,20 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         comics: action.payload,
+        comicsBackup: action.payload,
+      };
+    case GET_COMICS_BY_NAME:
+      const comicsByName = state.comics.filter((comic) => {
+        return comic.title.includes(action.payload);
+      });
+      return {
+        ...state,
+        comics: comicsByName,
+      };
+    case CLEAN_COMICS:
+      return {
+        ...state,
+        comics: state.comicsBackup,
       };
     default:
       return {

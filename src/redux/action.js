@@ -1,5 +1,6 @@
 export const GET_COMICS = "GET_COMICS";
-
+export const GET_COMICS_BY_NAME = "GET_COMICS_BY_NAME";
+export const CLEAN_COMICS = "CLEAN_COMICS";
 export const getComics = () => {
   return async function (dispatch) {
     const response = await fetch(
@@ -7,5 +8,18 @@ export const getComics = () => {
     );
     const data = await response.json();
     dispatch({ type: GET_COMICS, payload: data.data.results });
+  };
+};
+
+export const getComicsByName = (comicName) => {
+  return {
+    type: GET_COMICS_BY_NAME,
+    payload: comicName,
+  };
+};
+
+export const cleanComics = () => {
+  return {
+    type: CLEAN_COMICS,
   };
 };
