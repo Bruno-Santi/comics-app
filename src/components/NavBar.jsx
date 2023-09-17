@@ -4,7 +4,7 @@ import "animate.css";
 
 export const NavBar = () => {
   return (
-    <nav className='d-flex w-100  justify-content-md-between bg-dark'>
+    <nav className='d-flex w-100 sticky-top  justify-content-md-between bg-dark'>
       <a className='navbar-brand py-3 justify-self-start' href='#'>
         <img
           src={"../../public/img/marvel-icon.png"}

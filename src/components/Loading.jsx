@@ -1,5 +1,3 @@
-import "animate.css";
-
 export const Loading = () => {
   return (
     <div className='vh-100 pb-5 d-flex justify-content-center align-items-center'>

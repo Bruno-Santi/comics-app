@@ -1,7 +1,7 @@
 import { GET_COMICS } from "./action";
 
 const initialState = {
-  comics: {},
+  comics: [],
 };
 
 const rootReducer = (state = initialState, action) => {

@@ -1,0 +1,9 @@
+.zoom-on-hover {
+  transition: transform 0.2s, border-color 0.2s;
+  border-color: transparent; /* Borde transparente inicialmente */
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.05);
+  border-color: yellow; /* Cambio de color del borde a amarillo al hacer hover */
+}
