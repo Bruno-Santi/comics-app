@@ -10,6 +10,7 @@ const initialState = {
   comics: [],
   comicsBackup: [],
   comicById: [],
+  comicByName: [],
   characters: [],
 };
 
@@ -31,6 +32,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         comics: comicsByName,
+        comicsByName: comicsByName,
       };
     case GET_COMIC_BY_ID:
       // eslint-disable-next-line no-case-declarations

@@ -26,18 +26,16 @@ export const NavBar = () => {
           >
             Home
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to='/favorites'
             className={({ isActive }) =>
               `nav-item nav-link  ${
-                isActive
-                  ? "background: linear-gradient(220.55deg, #FFC328 0%, #E20000 100%)"
-                  : "text-light"
+                isActive ? "text-danger" : "text-light"
               }`
             }
           >
             Favorites
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     </nav>

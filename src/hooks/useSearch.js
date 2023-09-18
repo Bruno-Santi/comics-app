@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cleanComics, getComicsByName } from "../redux/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const useSearch = () => {
   const dispatch = useDispatch();
+  const comicsByName = useSelector(
+    ({ comicsByName }) => comicsByName
+  );
   const [error, setError] = useState(null);
   const [searchValue, setSearchValue] = useState(null);
   const handleSubmit = (e) => {
@@ -13,6 +16,14 @@ export const useSearch = () => {
     dispatch(getComicsByName(searchValue));
   };
 
+  useEffect(() => {
+    if (comicsByName?.length === 0)
+      setError(`No matches with ${searchValue}`);
+    return () => {
+      setError();
+    };
+  }, [comicsByName]);
+
   const handleChange = (e) => {
     const { value } = e.target;
     setSearchValue(value);
@@ -20,10 +31,16 @@ export const useSearch = () => {
     if (!value) dispatch(cleanComics());
   };
 
+  const handleRestore = () => {
+    dispatch(cleanComics());
+    setError(null);
+    setSearchValue("");
+  };
   return {
     error,
     handleSubmit,
     handleChange,
     searchValue,
+    handleRestore,
   };
 };

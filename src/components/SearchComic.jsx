@@ -1,8 +1,13 @@
 import { useSearch } from "../hooks/useSearch";
 
 export const SearchComic = () => {
-  const { handleSubmit, handleChange, error, searchValue } =
-    useSearch();
+  const {
+    handleSubmit,
+    handleChange,
+    handleRestore,
+    error,
+    searchValue,
+  } = useSearch();
 
   return (
     <div className='my-4 d-flex align-items-center justify-content-center'>
@@ -24,6 +29,12 @@ export const SearchComic = () => {
             </div>
           )}
         </form>
+        <button
+          onClick={handleRestore}
+          className='btn btn-outline-info h-25'
+        >
+          Restore
+        </button>
       </div>
     </div>
   );
