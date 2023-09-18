@@ -1,12 +1,10 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import { dateFormatter, thumbnailFormatter } from "../helpers";
 import ComicCardStyle from "../styles/ComicCardStyle.css";
 // eslint-disable-next-line react/prop-types
-export const ComicCard = ({
-  title,
-  thumbnail,
-  dates,
-  isFavorite,
-}) => {
+
+export const ComicCard = ({ id, title, thumbnail, dates }) => {
   const imagePath = thumbnailFormatter(thumbnail);
   const date = dateFormatter(dates);
 
@@ -14,21 +12,28 @@ export const ComicCard = ({
     <div className='col animate__animated animate__fadeIn'>
       <div
         className='card shadow zoom-on-hover'
-        style={{ width: "18em", height: "600px" }}
+        style={{
+          width: "18em",
+          maxHeight: "700px", // Establece el maxHeight inicial
+          overflow: "", // Añade scroll vertical si es necesario
+        }}
       >
-        <img
-          src={imagePath}
-          className='card-img flex-center'
-          alt={`${title} + Comic App`}
-        />
+        <Link to={`/comics/${id}`}>
+          <img
+            src={imagePath}
+            className='card-img flex-center'
+            alt={`${title} + Comic App`}
+          />
+        </Link>
         <div className='row no-gutters'>
           <div className='col-4'></div>
           <div className='col-10'>
             <div className='card-body'>
               <h5 className='card-title'>{title}</h5>
+
               <div className='d-flex'>
-                <p className='card-text'>Sale date:</p>
-                <p className='card-text'>{date}</p>
+                <strong className='card-text'>Sale date:</strong>
+                <p className='card-text mx-2'>{date}</p>
               </div>
             </div>
           </div>

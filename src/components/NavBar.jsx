@@ -30,7 +30,9 @@ export const NavBar = () => {
             to='/favorites'
             className={({ isActive }) =>
               `nav-item nav-link  ${
-                isActive ? "text-danger" : "text-light"
+                isActive
+                  ? "background: linear-gradient(220.55deg, #FFC328 0%, #E20000 100%)"
+                  : "text-light"
               }`
             }
           >
