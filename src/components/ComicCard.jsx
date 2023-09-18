@@ -14,8 +14,8 @@ export const ComicCard = ({ id, title, thumbnail, dates }) => {
         className='card shadow zoom-on-hover'
         style={{
           width: "18em",
-          maxHeight: "700px", // Establece el maxHeight inicial
-          overflow: "", // Añade scroll vertical si es necesario
+          maxHeight: "700px",
+          overflow: "",
         }}
       >
         <Link to={`/comics/${id}`}>

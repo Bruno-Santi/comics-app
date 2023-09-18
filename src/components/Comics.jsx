@@ -7,7 +7,7 @@ export const Comics = () => {
   return (
     <div>
       <SearchComic />
-      <div className='row rows-cols-1 p-5 row-cols-sm-4 w-75 justify-content-center mx-auto g-4'>
+      <div className='row rows-cols-1 p-5 row-cols-sm-4 w-75 mx-lg-auto g-3'>
         {!currentItems ? (
           <Loading />
         ) : (

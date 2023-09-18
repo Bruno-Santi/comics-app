@@ -31,7 +31,7 @@ export const getComicById = (id) => {
 export const getCharactersByComicId = (id) => {
   return async function (dispatch) {
     const response = await fetch(
-      `      https://gateway.marvel.com:443/v1/public/comics/${id}/characters?ts=1&orderBy=name&apikey=da9db239ac192993344d9b661a4cf23a&hash=2e9ddca8f096b65c3be62fc4c64a2df4
+      `      https://gateway.marvel.com:443/v1/public/comics/${id}/characters?ts=1&orderBy=name&apikey=${apiKey}&hash=2e9ddca8f096b65c3be62fc4c64a2df4
 
 `
     );

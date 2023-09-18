@@ -44,23 +44,25 @@ export const ComicDetail = () => {
   }, [comic]);
 
   return (
-    <div>
+    <div className=''>
       {!comic ? (
         <Loading />
       ) : (
-        <div className={`row w-75 my-5 mx-5 ${conditionalClassName}`}>
-          <div className='col-md-4'>
+        <div
+          className={`row w-100  d-flex justify-content-center mx-auto my-5 ${conditionalClassName}`}
+        >
+          <div className='col-md-3'>
             <img
               src={thumbnail}
               alt={`${comic.title} detail`}
               className='img-thumbnail'
             />
           </div>
-          <div className='col-md-8 w-50'>
-            <h3 className='my-5' style={{ fontFamily: "SUPER-HERO" }}>
+          <div className='col-md-8 w-50 w-sm-100'>
+            <h3 className='my-5' style={{ fontFamily: "Lilita One" }}>
               {comic.title}
             </h3>
-            <div className='description'>
+            <div className='description '>
               {comic.description && (
                 <>
                   {" "}
@@ -90,7 +92,7 @@ export const ComicDetail = () => {
                   {characters.map((char) => (
                     <li
                       key={char.name}
-                      className='list-group-item w-25'
+                      className='list-group-item w-25 w-sm-100'
                     >
                       {char.name}
                     </li>
