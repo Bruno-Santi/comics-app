@@ -58,7 +58,7 @@ export const ComicDetail = () => {
               className='img-thumbnail'
             />
           </div>
-          <div className='col-md-8 w-50 w-sm-100'>
+          <div className='col-md-8 w-75 w-sm-100'>
             <h3 className='my-5' style={{ fontFamily: "Lilita One" }}>
               {comic.title}
             </h3>
@@ -92,7 +92,7 @@ export const ComicDetail = () => {
                   {characters.map((char) => (
                     <li
                       key={char.name}
-                      className='list-group-item w-25 w-sm-100'
+                      className='list-group-item w-50 w-sm-100'
                     >
                       {char.name}
                     </li>

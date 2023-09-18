@@ -5,13 +5,13 @@ import "animate.css";
 export const NavBar = () => {
   return (
     <nav
-      className='d-flex sticky-top  justify-content-md-between bg-dark'
+      className='d-flex justify-content-center sticky-top  justify-content-md-between bg-dark'
       style={{ width: "100%" }}
     >
       <a className='navbar-brand py-2 justify-self-start' href='#'>
         <img
           src={
-            "https://assets.stickpng.com/images/61054e8cc32c810004977250.png"
+            "https://seeklogo.com/images/M/Marvel_Comics-logo-D489AEB9C1-seeklogo.com.png"
           }
           alt='Marvel Comics App Logo'
           className=' mx-4 my-auto animate__animated animate__fadeInLeft animate__delay-2 '
